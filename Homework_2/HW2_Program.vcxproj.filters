@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\hw2_main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\controls.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\HCI557Common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\CoordSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\controls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\HCI557Common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\CoordSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{CF3CC2FB-448E-3D66-AF2B-11130F20FC32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{A5CD7C82-37C5-3AAB-8BE7-263FF5B7A1F1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
