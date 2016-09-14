@@ -1,2 +1,4 @@
 ﻿  hw2_main.cpp
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\hw2_main.cpp(161): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\hw2_main.cpp(303): warning C4018: '<': signed/unsigned mismatch
   HW2_Program.vcxproj -> C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_2\Debug\HW2_Program.exe

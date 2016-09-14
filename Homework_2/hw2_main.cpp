@@ -94,50 +94,74 @@ GLuint program;
 unsigned int vaoID[2];
 unsigned int vboID[4];
 
-int ts_vertices_count = 102;
-float* ts_vertices = new float[ts_vertices_count];
-float* ts_colors = new float[102];
+// allocate more memory than we need
+int ts_vertices_count = 1000;
+float* ts_vertices;
+float* ts_colors;
 
-float* pg_vertices = new float[18];
-float* pg_colors = new float[18];
+// allocate more memory than we need
+int t_vertices_count = 1000;
+float* t_vertices;
+float* t_colors;
 
 /*!
  ADD YOUR CODE TO CREATE THE TRIANGLE STRIP MODEL TO THIS FUNCTION
  */
 unsigned int createTriangleStripModel(void)
 {
-	// use the vertex array object vaoID[0] for this model representation
+	ts_vertices = new float[ts_vertices_count]
+	{
+		0, 0, 3, // 1
+			1, 0, 3,
+			0, 1, 3,
+			1, 1, 3, // 2
+			0, 1, 1, // 3
+			1, 1, 1, // 4
+			1, 1, 1, // 5
+			1, 1, 3,
+			1, 0, 1,
+			1, 0, 3, // 6
+			0, 0, 1, // 7
+			0, 0, 3, // 8
+			0, 1, 1, // 9
+			0, 1, 3, // 10
+			0, 0, 1, // 11
+			0, 0, 0,
+			0, 2, 1,
+			0, 2, 0, // 12
+			1, 2, 0, // 13
+			0, 0, 0, // 14
+			1, 0, 0, // 15
+			1, 1, 1, // 16
+			0, 1, 1,
+			1, 2, 1,
+			0, 2, 1, // 17
+			1, 2, 0, // 18
+			1, 2, 1, // 19
+			3, 1, 0, // 20
+			3, 1, 1, // 21
+			3, 0, 0, // 22
+			3, 0, 1, // 23
+			0, 0, 0, // 24
+			0, 0, 1, // 25
+			1, 0, 1, // 26
+			3, 0, 1,
+			1, 1, 1,
+			3, 1, 1, // 27
+			1, 2, 1, // 29
+			1, 0, 0, // 30
+			3, 0, 0,
+			1, 1, 0,
+			3, 1, 0, // 31
+			1, 2, 0, // 32
+	};
 
-	ts_vertices[0] = 0; ts_vertices[1] = 0; ts_vertices[2] = 3; // 1
-	ts_colors[0] = 0.0; ts_colors[1] = 0.0; ts_colors[2] = 1.0; 
+	ts_colors = new float[ts_vertices_count];
 
-	ts_vertices[3] = 1; ts_vertices[4] = 0; ts_vertices[5] = 3; 
-	ts_colors[3] = 0.0; ts_colors[4] = 1.0; ts_colors[5] = 0.0;
-
-	ts_vertices[6] = 0; ts_vertices[7] = 1; ts_vertices[8] = 3; 
-	ts_colors[6] = 1.0; ts_colors[7] = 0.0; ts_colors[8] = 0.0;
-
-	ts_vertices[9] = 1; ts_vertices[10] = 1; ts_vertices[11] = 3; // 2
-	ts_colors[9] = 0.0; ts_colors[10] = 0.0; ts_colors[11] = 1.0;
-
-	ts_vertices[12] = 0; ts_vertices[13] = 1; ts_vertices[14] = 1; // 3
-	ts_colors[12] = 0.0; ts_colors[13] = 0.0; ts_colors[14] = 1.0;
-
-	ts_vertices[15] = 1; ts_vertices[16] = 1; ts_vertices[17] = 1; // 4
-	ts_colors[15] = 0.0; ts_colors[16] = 1.0; ts_colors[17] = 0.0;
-
-	ts_vertices[15] = 1; ts_vertices[16] = 1; ts_vertices[17] = 1; // 5
-	ts_colors[15] = 0.0; ts_colors[16] = 1.0; ts_colors[17] = 0.0;
-
-	ts_vertices[18] = 1; ts_vertices[19] = 1; ts_vertices[20] = 3;
-	ts_colors[18] = 0.0; ts_colors[19] = 1.0; ts_colors[20] = 0.0;
-
-	ts_vertices[21] = 1; ts_vertices[22] = 0; ts_vertices[23] = 1;
-	ts_colors[21] = 0.0; ts_colors[22] = 1.0; ts_colors[23] = 0.0;
-
-	ts_vertices[24] = 1; ts_vertices[25] = 0; ts_vertices[26] = 3; // 6
-	ts_colors[24] = 0.0; ts_colors[25] = 1.0; ts_colors[26] = 0.0;
-
+	for (unsigned int i = 0; i < ts_vertices_count; i++) {
+		// from http://stackoverflow.com/a/686373/1063392
+		ts_colors[i] = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+	}
 
 	return 1;
 }
@@ -147,23 +171,139 @@ unsigned int createTriangleStripModel(void)
  */
 unsigned int createPolygonModel(void)
 {
-	pg_vertices[0] = -0.5; pg_vertices[1] = -0.5; pg_vertices[2] = 1.5; // Bottom left corner
-	pg_colors[0] = 1.0; pg_colors[1] = 1.0; pg_colors[2] = 1.0; // Bottom left corner
+	t_vertices = new float[t_vertices_count]
+	{
+		0, 0, 3, // 1
+			1, 0, 3,
+			0, 1, 3,
 
-	pg_vertices[3] = -0.5; pg_vertices[4] = 0.5; pg_vertices[5] = 1.5; // Top left corner
-	pg_colors[3] = 1.0; pg_colors[4] = 0.0; pg_colors[5] = 0.0; // Top left corner
+			1, 0, 3,
+			0, 1, 3,
+			1, 1, 3,
 
-	pg_vertices[6] = 0.5; pg_vertices[7] = 0.5; pg_vertices[8] = 1.5; // Top Right corner
-	pg_colors[6] = 0.0; pg_colors[7] = 1.0; pg_colors[8] = 0.0; // Top Right corner
+			0, 1, 3,
+			1, 1, 3,
+			0, 1, 1,
 
-	pg_vertices[9] = 0.5; pg_vertices[10] = -0.5; pg_vertices[11] = 1.5; // Bottom right corner
-	pg_colors[9] = 0.0; pg_colors[10] = 0.0; pg_colors[11] = 1.0; // Bottom right corner
+			1, 1, 3,
+			0, 1, 1,
+			1, 1, 1,
 
-	pg_vertices[12] = -0.5; pg_vertices[13] = -0.5; pg_vertices[14] = 1.5; // Bottom left corner
-	pg_colors[12] = 1.0; pg_colors[13] = 1.0; pg_colors[14] = 1.0; // Bottom left corner
+			1, 1, 1,
+			1, 1, 3,
+			1, 0, 1,
 
-	pg_vertices[15] = 0.5; pg_vertices[16] = 0.5; pg_vertices[17] = 1.5; // Top Right corner
-	pg_colors[15] = 0.0; pg_colors[16] = 1.0; pg_colors[17] = 0.0; // Top Right corner
+			1, 1, 3,
+			1, 0, 1,
+			1, 0, 3,
+
+			1, 0, 1,
+			1, 0, 3,
+			0, 0, 3,
+
+			1, 0, 1,
+			0, 0, 3,
+			0, 0, 1,
+
+			0, 0, 1,
+			0, 0, 3,
+			0, 1, 1,
+
+			0, 0, 3,
+			0, 1, 1,
+			0, 1, 3,
+
+			0, 0, 1,
+			0, 0, 0,
+			0, 2, 1,
+
+			0, 0, 0,
+			0, 2, 1,
+			0, 2, 0,
+
+			0, 2, 1,
+			0, 2, 0,
+			1, 2, 0,
+
+			0, 2, 0,
+			1, 2, 0,
+			0, 0, 0,
+
+			1, 2, 0,
+			0, 0, 0,
+			1, 0, 0,
+
+			1, 1, 1,
+			0, 1, 1,
+			1, 2, 1,
+
+			0, 1, 1,
+			1, 2, 1,
+			0, 2, 1,
+
+			1, 2, 1,
+			0, 2, 1,
+			1, 2, 0,
+
+			0, 2, 1,
+			1, 2, 0,
+			1, 2, 1,
+
+			1, 2, 0,
+			1, 2, 1,
+			3, 1, 0,
+
+			1, 2, 1,
+			3, 1, 0,
+			3, 1, 1,
+
+			3, 1, 0,
+			3, 1, 1,
+			3, 0, 0,
+
+			3, 1, 1,
+			3, 0, 0,
+			3, 0, 1,
+
+			3, 0, 0,
+			3, 0, 1,
+			0, 0, 0,
+
+			3, 0, 1,
+			0, 0, 0,
+			0, 0, 1,
+
+			1, 0, 1,
+			3, 0, 1,
+			1, 1, 1,
+
+			3, 0, 1,
+			1, 1, 1,
+			3, 1, 1,
+
+			1, 1, 1,
+			3, 1, 1,
+			1, 2, 1,
+
+			1, 0, 0,
+			3, 0, 0,
+			1, 1, 0,
+
+			3, 0, 0,
+			1, 1, 0,
+			3, 1, 0,
+
+			1, 1, 0,
+			3, 1, 0,
+			1, 2, 0,
+	};
+
+	t_colors = new float[t_vertices_count];
+
+	for (unsigned int i = 0; i < t_vertices_count; i++) {
+		// from http://stackoverflow.com/a/686373/1063392
+		t_colors[i] = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+	}
 
 	return 1;
 }
@@ -197,9 +337,12 @@ void renderTriangleStripModel(void)
 	// HERE: THIS CAUSES AN ERROR BECAUSE I DO NOT KNOW HOW MANY TRIANGLES / VERTICES YOU HAVE.
 	// COMPLETE THE LINE
 	// Draw the triangles
-	//glDrawArrays(GL_TRIANGLE_STRIP, 0, 0);
 	glDrawArrays(GL_TRIANGLE_STRIP, 0, 6);
-	glDrawArrays(GL_TRIANGLE_STRIP, 5, 4);
+	glDrawArrays(GL_TRIANGLE_STRIP, 5, 9);
+	glDrawArrays(GL_TRIANGLE_STRIP, 14, 7);
+	glDrawArrays(GL_TRIANGLE_STRIP, 21, 12);
+	glDrawArrays(GL_TRIANGLE_STRIP, 33, 5);
+	glDrawArrays(GL_TRIANGLE_STRIP, 38, 5);
 
 
 	// Unbind our Vertex Array Object
@@ -221,13 +364,13 @@ void renderPolygonModel(void)
 	glGenBuffers(2, vboID);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vboID[0]);
-	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), pg_vertices, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, t_vertices_count * sizeof(GLfloat), t_vertices, GL_STATIC_DRAW);
 
 	glVertexAttribPointer((GLuint)0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glEnableVertexAttribArray(0);
 
 	glBindBuffer(GL_ARRAY_BUFFER, vboID[1]);
-	glBufferData(GL_ARRAY_BUFFER, 18 * sizeof(GLfloat), pg_colors, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, t_vertices_count * sizeof(GLfloat), t_colors, GL_STATIC_DRAW);
 
 	glVertexAttribPointer((GLuint)1, 3, GL_FLOAT, GL_FALSE, 0, 0);
 	glEnableVertexAttribArray(1);
@@ -235,8 +378,11 @@ void renderPolygonModel(void)
 	// HERE: THIS CAUSES AN ERROR BECAUSE I DO NOT KNOW HOW MANY TRIANGLES / VERTICES YOU HAVE.
 	// COMPLETE THE LINE
 	// Draw the triangles
-	//glDrawArrays(GL_POLYGON, 0, 0);
-	glDrawArrays(GL_TRIANGLES, 0, 6);
+	for (int i = 0; i < 31; i++) {
+
+		// my graphics card does not support GL_POLYGON, so I'm using GL_TRIANGLES as Professor Radkowski mentioned in class
+		glDrawArrays(GL_TRIANGLES, i * 3, 3);
+	}
 
 	// Unbind our Vertex Array Object
 	glBindVertexArray(0);
@@ -256,8 +402,8 @@ void setupScene(void) {
 	createTriangleStripModel();
 	renderTriangleStripModel();
 
-	/*createPolygonModel();
-	renderPolygonModel();*/
+	createPolygonModel();
+	renderPolygonModel();
 }
 
 int main(int argc, const char * argv[])
@@ -382,8 +528,8 @@ int main(int argc, const char * argv[])
 
 
 		// This moves the model to the right
-		//modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(2.0f, 0.0f, 0.0f));
-		//glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader
+		modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(2.0f, 0.0f, 0.0f));
+		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader
 
 
 		// This line renders your triangle strip model
@@ -391,8 +537,8 @@ int main(int argc, const char * argv[])
 
 
 		// This moves the model to the left
-		//modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-2.0f, -0.0f, 0.0f));
-		//glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader
+		modelMatrix = glm::translate(glm::mat4(1.0f), glm::vec3(-2.0f, -0.0f, 0.0f));
+		glUniformMatrix4fv(modelMatrixLocation, 1, GL_FALSE, &modelMatrix[0][0]); // Send our model matrix to the shader
 
 		// This line renders your Ppolygon model
 		renderPolygonModel();
