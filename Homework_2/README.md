@@ -2,7 +2,8 @@
 
 Deliverables:
 
-- [Sketch.pdf](Sketch.pdf)
+- [Sketch.png](Sketch.png):
+ <img src="Sketch.png" />
 - [TriangleStripScreenshot.png](TriangleStripScreenshot.png):
  <img src="TriangleStripScreenshot.png" />
 - [TriangleScreenshot.png](TriangleScreenshot.png):
