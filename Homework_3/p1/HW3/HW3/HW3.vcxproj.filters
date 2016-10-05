@@ -48,6 +48,18 @@
     <ClCompile Include="GLSphereSpot.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GLRedSphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLBlueSphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLGreenSphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GLYellowSphere.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\..\HCI-557-CG\gl_common\Shaders.h">
@@ -86,12 +98,36 @@
     <ClInclude Include="GLSphereSpot.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GLRedSphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLBlueSphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLGreenSphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GLYellowSphere.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="spotlight.fs">
+    <None Include="spotlight_red_blue.fs">
       <Filter>Source Files</Filter>
     </None>
-    <None Include="spotlight.vs">
+    <None Include="spotlight_red_blue.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="spotlight_green.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="spotlight_yellow.vs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="spotlight_yellow.fs">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="spotlight_green.vs">
       <Filter>Source Files</Filter>
     </None>
   </ItemGroup>

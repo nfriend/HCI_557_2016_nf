@@ -153,7 +153,11 @@
     <ClCompile Include="..\..\..\..\..\HCI-557-CG\gl_common\HCI557Common.cpp" />
     <ClCompile Include="..\..\..\..\..\HCI-557-CG\gl_common\HCI557Datatypes.cpp" />
     <ClCompile Include="..\..\..\..\..\HCI-557-CG\gl_common\Shaders.cpp" />
+    <ClCompile Include="GLBlueSphere.cpp" />
+    <ClCompile Include="GLGreenSphere.cpp" />
+    <ClCompile Include="GLRedSphere.cpp" />
     <ClCompile Include="GLSphereSpot.cpp" />
+    <ClCompile Include="GLYellowSphere.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -168,11 +172,19 @@
     <ClInclude Include="..\..\..\..\..\HCI-557-CG\gl_common\HCI557Common.h" />
     <ClInclude Include="..\..\..\..\..\HCI-557-CG\gl_common\HCI557Datatypes.h" />
     <ClInclude Include="..\..\..\..\..\HCI-557-CG\gl_common\Shaders.h" />
+    <ClInclude Include="GLBlueSphere.h" />
+    <ClInclude Include="GLGreenSphere.h" />
+    <ClInclude Include="GLRedSphere.h" />
     <ClInclude Include="GLSphereSpot.h" />
+    <ClInclude Include="GLYellowSphere.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="spotlight.fs" />
-    <None Include="spotlight.vs" />
+    <None Include="spotlight_green.vs" />
+    <None Include="spotlight_green.fs" />
+    <None Include="spotlight_red_blue.fs" />
+    <None Include="spotlight_red_blue.vs" />
+    <None Include="spotlight_yellow.fs" />
+    <None Include="spotlight_yellow.vs" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

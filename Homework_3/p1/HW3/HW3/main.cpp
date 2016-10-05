@@ -1,11 +1,3 @@
-//
-//  main_spotlight.cpp
-//  HCI 557 Spotlight example
-//
-//  Created by Rafael Radkowski on 5/28/15.
-//  Copyright (c) 2015 -. All rights reserved.
-//
-
 // stl include
 #include <iostream>
 #include <string>
@@ -19,33 +11,29 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtx/transform.hpp>
 
-
 // glfw includes
 #include <GLFW/glfw3.h>
-
 
 // include local files
 #include "controls.h"
 #include "HCI557Common.h"
 #include "CoordSystem.h"
 #include "GLSphereSpot.h"
-
-
-
+#include "GLRedSphere.h"
+#include "GLBlueSphere.h"
+#include "GLGreenSphere.h"
+#include "GLYellowSphere.h"
 
 using namespace std;
 
-
 // The handle to the window object
-GLFWwindow*         window;
+GLFWwindow* window;
 
 // Define some of the global variables we're using for this sample
 GLuint program;
 
 /* A trackball to move and rotate the camera view */
 extern Trackball trackball;
-
-
 
 int main(int argc, const char * argv[])
 {
@@ -70,19 +58,21 @@ int main(int argc, const char * argv[])
 	CoordSystem* cs = new CoordSystem(40.0);
 
 
-	GLSphereSpot* sphere = new GLSphereSpot(0.0, 0.0, 0.0, 10.0, 90, 50);
+	GLRedSphere* red_sphere = new GLRedSphere(0.0, 0.0, 0.0, 10.0, 90, 50);
+	GLBlueSphere* blue_sphere = new GLBlueSphere(25.0, 0.0, 0.0, 10.0, 90, 50);
+	GLGreenSphere* green_sphere = new GLGreenSphere(50.0, 0.0, 0.0, 10.0, 180, 200);
+	GLYellowSphere* yellow_sphere = new GLYellowSphere(75.0, 0.0, 0.0, 10.0, 180, 200);
 
 
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//// Main render loop
 
-	// Set up our green background color
-	static const GLfloat clear_color[] = { 0.0f, 0.0f, 0.0f, 1.0f };
+	static const GLfloat clear_color[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	static const GLfloat clear_depth[] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	// This sets the camera to a new location
 	// the first parameter is the eye position, the second the center location, and the third the up vector. 
-	SetViewAsLookAt(glm::vec3(12.0f, 12.0f, 15.5f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	SetViewAsLookAt(glm::vec3(37.0f, 0.0f, 80.0f), glm::vec3(37.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
 
 	// Enable depth test
@@ -107,9 +97,12 @@ int main(int argc, const char * argv[])
 		SetTrackballLocation(trackball.getRotationMatrix());
 
 		// draw the objects
-		cs->draw();
+		//cs->draw();
 
-		sphere->draw();
+		red_sphere->draw();
+		blue_sphere->draw();
+		green_sphere->draw();
+		yellow_sphere->draw();
 
 		//// This renders the objects
 		///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
