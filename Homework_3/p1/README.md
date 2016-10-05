@@ -3,4 +3,4 @@
 Deliverables:
 
 - [result.png](HW3/result.png):
- <img src="result.png" />
+ <img src="HW3/result.png" />
