@@ -1,0 +1,8 @@
+﻿  HCI557Common.cpp
+c:\users\nathan\documents\github\hci-557-cg\gl_common\hci557common.cpp(128): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\nathan\documents\github\hci-557-cg\gl_common\hci557common.cpp(129): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\nathan\documents\github\hci-557-cg\gl_common\hci557common.cpp(238): warning C4305: 'return': truncation from 'int' to 'bool'
+c:\users\nathan\documents\github\hci-557-cg\gl_common\hci557common.cpp(92): warning C4715: 'GetCurrentCameraTranslation': not all control paths return a value
+c:\users\nathan\documents\github\hci-557-cg\gl_common\hci557common.cpp(75): warning C4715: 'GetCurrentCameraMatrix': not all control paths return a value
+  HW3.vcxproj -> C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_3\p1\HW3\x64\Debug\HW3.exe
+  HW3.vcxproj -> C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_3\p1\HW3\x64\Debug\HW3.pdb (Partial PDB)
