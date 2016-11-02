@@ -1,0 +1,18 @@
+﻿  hw4_main.cpp
+  controls.cpp
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\controls.cpp(55): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\controls.cpp(58): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\controls.cpp(66): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  HCI557Common.cpp
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\HCI557Common.cpp(128): warning C4305: 'return': truncation from 'int' to 'bool'
+  CoordSystem.cpp
+  ImgLoader.cpp
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ImgLoader.cpp(39): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ImgLoader.cpp(74): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ImgLoader.cpp(104): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  ShaderFileUtils.cpp
+C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ShaderFileUtils.cpp(49): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  HW4_Program.vcxproj -> C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\Debug\HW4_Program.exe
