@@ -1,6 +1,6 @@
 # Homework 3
 
-### Deliverables
+Deliverables:
 
 - Problem 1 - [result.png](./result.png):
  <img src="./result.png" />
