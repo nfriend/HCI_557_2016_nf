@@ -1,0 +1,4 @@
+﻿  Checking Build System
+  CMake is re-running because generate.stamp.list is missing.
+CUSTOMBUILD : CMake error : The source directory "C:/Users/Nathan/Documents/GitHub/HCI_557_2016_nf/Homework_4/Problem 1" does not appear to contain CMakeLists.txt.
+  Specify --help for usage, or press the help button on the CMake GUI.
