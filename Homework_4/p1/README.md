@@ -2,6 +2,5 @@
 
 ### Deliverables
 
-Problem 1:
-- [result.png](./result.png):
+- Problem 1 - [result.png](./result.png):
  <img src="./result.png" />
