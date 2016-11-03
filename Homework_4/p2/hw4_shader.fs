@@ -19,7 +19,7 @@ void main(void)
 	// color = (gradientTexColor * .4) + moonTexColor + cowTexColor;
 
 	// texture blending method 2
-	if (cowTexColor.x != 0) {
+	if (cowTexColor.x != 0 && cowTexColor.y != 0 && cowTexColor.z != 0) {
 		color = cowTexColor;
 	} else {
 		color = (gradientTexColor * .4) + moonTexColor;
