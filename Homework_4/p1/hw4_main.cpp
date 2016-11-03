@@ -179,7 +179,7 @@ void createSquare(void)
 	glBindBuffer(GL_ARRAY_BUFFER, vboID[2]); // Bind our second Vertex Buffer Object
 	glBufferData(GL_ARRAY_BUFFER, 12 * sizeof(GLfloat), texture_coords, GL_STATIC_DRAW); // Set the size and data of our VBO and set it to STATIC_DRAW
 
-	glVertexAttribPointer((GLuint)2, 2, GL_FLOAT, GL_FALSE, 0, 0); // Set up our vertex attributes pointer
+	glVertexAttribPointer((GLuint)2, 3, GL_FLOAT, GL_FALSE, 0, 0); // Set up our vertex attributes pointer
 	glEnableVertexAttribArray(2); // Enable the third vertex attribute array
 
 
