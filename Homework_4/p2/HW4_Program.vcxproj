@@ -281,7 +281,9 @@
     <None Include="hw4_shader.vs" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="flag.bmp" />
+    <Image Include="cow.bmp" />
+    <Image Include="gradient.bmp" />
+    <Image Include="moon.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

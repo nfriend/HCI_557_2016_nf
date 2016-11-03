@@ -85,7 +85,7 @@ GLFWwindow* initWindow(void)
     
     
     // Create a window to put our stuff in.
-    window = glfwCreateWindow(800, 600, "Homework 2", NULL, NULL);
+    window = glfwCreateWindow(800, 600, "Homework 3, Problem 2", NULL, NULL);
     
     // If the window fails to be created, print out the error, clean up GLFW and exit the program.
     if( window == NULL ){

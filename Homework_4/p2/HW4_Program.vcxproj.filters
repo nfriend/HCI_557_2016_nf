@@ -1,39 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\hw4_main.cpp">
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\controls.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\controls.cpp">
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\CoordSystem.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\HCI557Common.cpp">
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\HCI557Common.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\CoordSystem.cpp">
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\hw4_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ImgLoader.cpp">
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\ShaderFileUtils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ShaderFileUtils.cpp">
+    <ClCompile Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\ImgLoader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\controls.h">
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\controls.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\HCI557Common.h">
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\CoordSystem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\CoordSystem.h">
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\HCI557Common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ImgLoader.h">
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\ImgLoader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\Problem 1\ShaderFileUtils.h">
+    <ClInclude Include="C:\Users\Nathan\Documents\GitHub\HCI_557_2016_nf\Homework_4\p2\ShaderFileUtils.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -51,6 +51,8 @@
     <None Include=".gitignore" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="flag.bmp" />
+    <Image Include="cow.bmp" />
+    <Image Include="gradient.bmp" />
+    <Image Include="moon.bmp" />
   </ItemGroup>
 </Project>

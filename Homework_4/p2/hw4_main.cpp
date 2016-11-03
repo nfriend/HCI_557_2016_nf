@@ -45,8 +45,6 @@ In addition:
 #include "ShaderFileUtils.h"
 #include "ImgLoader.h"
 
-
-
 // this line tells the compiler to use the namespace std.
 // Each object, command without a namespace is assumed to be part of std. 
 using namespace std;
@@ -71,7 +69,7 @@ GLuint program;
 
 
 // USE THESE vertex array objects to define your objects
-unsigned int vaoID[3];
+unsigned int vaoID[4];
 
 unsigned int vboID[4];
 
@@ -155,11 +153,11 @@ void createSquare(void)
 	    Note, they ned to be inside the same vbo in which the vertices are defined. 
 	-----------------------------------------------------------------------------------*/
 
-	glGenVertexArrays(3, &vaoID[0]); // Create our Vertex Array Object
+	glGenVertexArrays(4, &vaoID[0]); // Create our Vertex Array Object
 	glBindVertexArray(vaoID[0]); // Bind our Vertex Array Object so we can use it
 
 
-	glGenBuffers(3, vboID); // Generate our Vertex Buffer Object
+	glGenBuffers(4, vboID); // Generate our Vertex Buffer Object
 
 							// vertices
 	glBindBuffer(GL_ARRAY_BUFFER, vboID[0]); // Bind our Vertex Buffer Object
@@ -182,12 +180,14 @@ void createSquare(void)
 	glVertexAttribPointer((GLuint)2, 2, GL_FLOAT, GL_FALSE, 0, 0); // Set up our vertex attributes pointer
 	glEnableVertexAttribArray(2); // Enable the third vertex attribute array
 
+	GLuint textures[3];
+	glGenTextures(3, textures);
 
-	unsigned char* flag = ImgLoader().Load("..\\flag.bmp");
-	GLuint texture;
-	glGenTextures(0, &texture);
+	unsigned char* gradient = ImgLoader().Load("..\\gradient.bmp");
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture);
+	glBindTexture(GL_TEXTURE_2D, textures[0]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 256, 256, 0, GL_BGR, GL_UNSIGNED_BYTE, gradient);
+
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
@@ -195,9 +195,29 @@ void createSquare(void)
 	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
 	glGenerateMipmap(GL_TEXTURE_2D);
 
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 250, 250, 0, GL_BGR, GL_UNSIGNED_BYTE, flag);
+	unsigned char* moon = ImgLoader().Load("..\\moon.bmp");
+	glActiveTexture(GL_TEXTURE1);
+	glBindTexture(GL_TEXTURE_2D, textures[1]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 256, 256, 0, GL_BGR, GL_UNSIGNED_BYTE, moon);
 
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glGenerateMipmap(GL_TEXTURE_2D);
 
+	unsigned char* cow = ImgLoader().Load("..\\cow.bmp");
+	glActiveTexture(GL_TEXTURE2);
+	glBindTexture(GL_TEXTURE_2D, textures[2]);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 256, 256, 0, GL_BGR, GL_UNSIGNED_BYTE, cow);
+
+	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+	glTexParameterf(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+	glGenerateMipmap(GL_TEXTURE_2D);
 
 	glBindVertexArray(0); // Disable our Vertex Buffer Object
 
@@ -315,8 +335,8 @@ int main(int argc, const char * argv[])
     //// The Shader Program ends here
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
+	
 
-    
     // Set up our green background color
     static const GLfloat clear_color[] = { 0.6f, 0.7f, 1.0f, 1.0f };
     static const GLfloat clear_depth[] = { 1.0f, 1.0f, 1.0f, 1.0f };
@@ -329,6 +349,9 @@ int main(int argc, const char * argv[])
     int projectionMatrixLocation = glGetUniformLocation(program, "projectionMatrix"); // Get the location of our projection matrix in the shader
     int viewMatrixLocation = glGetUniformLocation(program, "viewMatrix"); // Get the location of our view matrix in the shader
     int modelMatrixLocation = glGetUniformLocation(program, "modelMatrix"); // Get the location of our model matrix in the shader
+	int gradientTexLocation = glGetUniformLocation(program, "gradient_tex");
+	int moonTexLocation = glGetUniformLocation(program, "moon_tex");
+	int cowTexLocation = glGetUniformLocation(program, "cow_tex");
     
     glUniformMatrix4fv(projectionMatrixLocation, 1, GL_FALSE, &projectionMatrix[0][0]); // Send our projection matrix to the shader
     glUniformMatrix4fv(viewMatrixLocation, 1, GL_FALSE, &viewMatrix[0][0]); // Send our view matrix to the shader
@@ -337,6 +360,10 @@ int main(int argc, const char * argv[])
     glBindAttribLocation(program, 0, "in_Position");
     glBindAttribLocation(program, 1, "in_Color");
 	glBindAttribLocation(program, 2, "in_TexCoord");
+
+	glUniform1i(gradientTexLocation, 0);
+	glUniform1i(moonTexLocation, 1);
+	glUniform1i(cowTexLocation, 2);
     
     
     // this creates the scene
