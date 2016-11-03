@@ -27,7 +27,7 @@ Texture blending method 1: [result1.png](./result1.png):
   color = (gradientTexColor * .4) + moonTexColor + cowTexColor;
   ```
 
-Texture blending method 2: [results2.png](./result2.png):
+Texture blending method 2: [result2.png](./result2.png):
   <img src="./result2.png" /><br />
   This image resulted from a slightly more intelligent combination which ignored the cow image color if the color was black and exclusively used the cow image color if the color was non-black:
 
