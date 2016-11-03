@@ -4,16 +4,18 @@
 
 The following images were combined:
 
-[gradient.bmp](./gradient.bmp):
+[gradient.bmp](./gradient.bmp):<br />
 <img src="./gradient.bmp" /><br />
 
-[moon.bmp](./moon.bmp):
+[moon.bmp](./moon.bmp):<br />
 <img src="./moon.bmp" /><br />
 
-[cow.bmp](./cow.bmp):
-<img src="./cow.bmp" /><br />
+[cow.bmp](./cow.bmp):<br />
+<img src="./cow.bmp" />
 
-<b>Texture blending method 1:</b> [result1.png](./result1.png):
+<hr />
+
+Texture blending method 1: [result1.png](./result1.png):
  <img src="./result1.png" /><br />
   This image resulted from a very simple combination of the three textures:
 
@@ -25,7 +27,7 @@ The following images were combined:
   color = (gradientTexColor * .4) + moonTexColor + cowTexColor;
   ```
 
-<b>Texture blending method 1:</b> [results2.png](./result2.png):
+Texture blending method 1: [results2.png](./result2.png):
   <img src="./result2.png" /><br />
   This image resulted from a slightly more intelligent combination which ignored the cow image color if the color was black and exclusively used the cow image color if the color was non-black:
 
